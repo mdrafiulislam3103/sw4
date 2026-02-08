@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axcrypto - Complete Crypto P2P Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Content Container -->
+    <div id="main-content">
+        <!-- Public Website (Default View) -->
+        <div id="public-website">
+            <!-- Header -->
+            <header class="public-header">
+                <div class="container">
+                    <nav class="navbar">
+                        <a href="#" class="logo">axcrypto</a>
+                        
+                        <div class="nav-links">
+                            <a href="#" onclick="showPublicSection('home')">Home</a>
+                            <a href="#" onclick="showPublicSection('how-it-works')">How It Works</a>
+                            <a href="#" onclick="showPublicSection('features')">Features</a>
+                            <a href="#" onclick="showPublicSection('sell')">Become Seller</a>
+                            <a href="#" onclick="showPublicSection('contact')">Contact</a>
+                            <div class="wallet-balance" onclick="showLoginModal()">
+                                <i class="fas fa-user"></i> Login / Register
+                            </div>
+                        </div>
+                        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </nav>
+                </div>
+            </header>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#" onclick="showPublicSection('home'); toggleMobileMenu()">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#" onclick="showPublicSection('how-it-works'); toggleMobileMenu()">
+                    <i class="fas fa-info-circle"></i> How It Works
+                </a>
+                <a href="#" onclick="showPublicSection('features'); toggleMobileMenu()">
+                    <i class="fas fa-star"></i> Features
+                </a>
+                <a href="#" onclick="showPublicSection('sell'); toggleMobileMenu()">
+                    <i class="fas fa-user-tie"></i> Become Seller
+                </a>
+                <a href="#" onclick="showPublicSection('contact'); toggleMobileMenu()">
+                    <i class="fas fa-phone"></i> Contact
+                </a>
+                <a href="#" onclick="showLoginModal(); toggleMobileMenu()" class="mobile-login-btn">
+                    <i class="fas fa-user"></i> Login / Register
+                </a>
+            </div>
+
+            <!-- Hero Section -->
+            <section class="hero" id="home-section">
+                <div class="container">
+                    <h1 class="fade-in">Buy & Sell Crypto Instantly</h1>
+                    <p class="fade-in">Secure P2P cryptocurrency trading platform. Buy and sell USDT, Bitcoin, and other cryptocurrencies with local payment methods in Bangladesh.</p>
+                    <div class="hero-buttons fade-in">
+                        <button class="btn-primary" onclick="showBuyModal()">
+                            <i class="fas fa-shopping-cart"></i> Buy Crypto Now
+                        </button>
+                        <button class="btn-secondary" onclick="showPublicSection('sell')">
+                            <i class="fas fa-user-tie"></i> Become a Seller
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dollar Rate & Crypto Prices -->
+            <section class="pricing">
+                <div class="container">
+                    <h2 class="section-title">Today's Rates</h2>
+                    <div class="rate-card fade-in">
+                        <h2>USD TO BDT RATE</h2>
+                        <div class="rate">$1 = 130 TK</div>
+                        <div class="note">Updated: Just now • Admin controlled rate</div>
+                    </div>
+                    
+                    <div class="crypto-prices">
+                        <div class="crypto-item fade-in">
+                            <div class="crypto-label">Bitcoin (BTC)</div>
+                            <div class="crypto-price" id="btcPrice">$117,926.99</div>
+                            <div class="crypto-change positive" id="btcChange">+2.45%</div>
+                        </div>
+                        <div class="crypto-item fade-in">
+                            <div class="crypto-label">Ethereum (ETH)</div>
+                            <div class="crypto-price" id="ethPrice">$3,647.14</div>
+                            <div class="crypto-change negative" id="ethChange">-0.59%</div>
+                        </div>
+                        <div class="crypto-item fade-in">
+                            <div class="crypto-label">BNB</div>
+                            <div class="crypto-price" id="bnbPrice">$790.52</div>
+                            <div class="crypto-change positive" id="bnbChange">+4.25%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Payment Methods -->
+            <section class="payment-methods" id="features-section">
+                <div class="container">
+                    <h2 class="section-title">Payment Methods</h2>
+                    <div class="methods-grid">
+                        <div class="method-card fade-in">
+                            <div class="method-icon">
+                                <i class="fab fa-bkash"></i>
+                            </div>
+                            <h3>bKash</h3>
+                            <p>Instant bKash payments with 24/7 support</p>
+                            <div class="payment-number">01917142350</div>
+                        </div>
+                        <div class="method-card fade-in">
+                            <div class="method-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>Rocket</h3>
+                            <p>Fast Rocket transactions</p>
+                            <div class="payment-number">01306755110</div>
+                        </div>
+                        <div class="method-card fade-in">
+                            <div class="method-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <h3>Nagad</h3>
+                            <p>Secure Nagad payments</p>
+                            <div class="payment-number">01865467486</div>
+                        </div>
+                        <div class="method-card fade-in">
+                            <div class="method-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Upay</h3>
+                            <p>Upay wallet transfers</p>
+                            <div class="payment-number">01865467486</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works -->
+            <section class="how-it-works" id="how-it-works-section">
+                <div class="container">
+                    <h2 class="section-title">How It Works</h2>
+                    <div class="steps">
+                        <div class="step fade-in">
+                            <div class="step-number">1</div>
+                            <h3>Create Account</h3>
+                            <p>Register with your mobile number and complete verification</p>
+                        </div>
+                        <div class="step fade-in">
+                            <div class="step-number">2</div>
+                            <h3>Choose Amount</h3>
+                            <p>Select how much crypto you want to buy or sell</p>
+                        </div>
+                        <div class="step fade-in">
+                            <div class="step-number">3</div>
+                            <h3>Make Payment</h3>
+                            <p>Send payment via bKash/Rocket/Nagad/Upay</p>
+                        </div>
+                        <div class="step fade-in">
+                            <div class="step-number">4</div>
+                            <h3>Get Crypto</h3>
+                            <p>Receive crypto instantly after admin approval</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seller Section -->
+            <section class="seller-section" id="sell-section">
+                <div class="container">
+                    <h2 class="section-title">Become a Verified Seller</h2>
+                    <div class="seller-card fade-in">
+                        <h2>Earn Money by Selling Crypto</h2>
+                        <p>Join our network of verified sellers and start earning. We provide 24/7 support and secure platform.</p>
+                        
+                        <h3>Requirements:</h3>
+                        <ul class="requirements">
+                            <li>
+                                <span class="check-mark">✓</span>
+                                Security Deposit: 1.5 Lakh BDT (Negotiable)
+                            </li>
+                            <li>
+                                <span class="check-mark">✓</span>
+                                Bank Blank Cheque (Scanned Copy)
+                            </li>
+                            <li>
+                                <span class="check-mark">✓</span>
+                                Passport Copy
+                            </li>
+                            <li>
+                                <span class="check-mark">✓</span>
+                                NID Copy (Front & Back)
+                            </li>
+                            <li>
+                                <span class="check-mark">✓</span>
+                                Last Month Bank Statement
+                            </li>
+                            <li>
+                                <span class="check-mark">✓</span>
+                                WhatsApp: 01865467486 (For Verification)
+                            </li>
+                        </ul>
+                        
+                        <button class="btn-primary seller-apply-btn" onclick="showSellerModal()">
+                            <i class="fas fa-user-check"></i> Apply as Seller Now
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section class="features">
+                <div class="container">
+                    <h2 class="section-title">Why Choose axcrypto</h2>
+                    <div class="feature-cards">
+                        <div class="feature-card fade-in">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>100% Secure</h3>
+                            <p>Bank-level security with encrypted transactions and secure escrow system</p>
+                        </div>
+                        <div class="feature-card fade-in">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3>Instant Processing</h3>
+                            <p>Most transactions completed within 5-15 minutes with 24/7 support</p>
+                        </div>
+                        <div class="feature-card fade-in">
+                            <div class="feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3>24/7 Support</h3>
+                            <p>Dedicated support team available round the clock via WhatsApp and email</p>
+                        </div>
+                        <div class="feature-card fade-in">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3>P2P Trading</h3>
+                            <p>Direct peer-to-peer trading with verified users and escrow protection</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section class="contact" id="contact-section">
+                <div class="container">
+                    <h2 class="section-title">Contact Support</h2>
+                    <p>Need help? Our support team is available 24/7 to assist you with any questions or issues.</p>
+                    <a href="https://wa.me/8801865467486" class="whatsapp-contact" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Support: 01865467486
+                    </a>
+                    <p class="contact-info">
+                        Email: support@axcrypto.com<br>
+                        Hours: 24/7 (Bangladesh Time)
+                    </p>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="public-footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-column">
+                            <div class="footer-logo">axcrypto</div>
+                            <p>Secure P2P cryptocurrency trading platform for Bangladesh. Buy and sell crypto instantly with local payment methods.</p>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Quick Links</h3>
+                            <ul class="footer-links">
+                                <li><a href="#" onclick="showPublicSection('home')">Home</a></li>
+                                <li><a href="#" onclick="showPublicSection('how-it-works')">How It Works</a></li>
+                                <li><a href="#" onclick="showPublicSection('features')">Features</a></li>
+                                <li><a href="#" onclick="showPublicSection('sell')">Become Seller</a></li>
+                                <li><a href="#" onclick="showPublicSection('contact')">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Legal</h3>
+                            <ul class="footer-links">
+                                <li><a href="#" onclick="showModal('termsModal')">Terms of Service</a></li>
+                                <li><a href="#" onclick="showModal('privacyModal')">Privacy Policy</a></li>
+                                <li><a href="#" onclick="showModal('disclaimerModal')">Risk Disclaimer</a></li>
+                                <li><a href="#" onclick="showModal('kycModal')">KYC Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Payment Methods</h3>
+                            <ul class="footer-links">
+                                <li>bKash</li>
+                                <li>Rocket</li>
+                                <li>Nagad</li>
+                                <li>Upay</li>
+                                <li>Bank Transfer</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        © 2024 axcrypto. All rights reserved. | P2P Crypto Trading Platform
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- User Dashboard (Hidden by Default) -->
+        <div id="user-dashboard" class="hidden">
+            <div class="dashboard-container">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <div class="logo">MY WALLET</div>
+                    
+                    <a href="#" class="nav-item active" onclick="showUserSection('overview')">
+                        <i class="fas fa-tachometer-alt nav-icon"></i>
+                        <span>Overview</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item" onclick="showUserSection('buy')">
+                        <i class="fas fa-shopping-cart nav-icon"></i>
+                        <span>Buy Crypto</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item" onclick="showUserSection('sell')">
+                        <i class="fas fa-user-tie nav-icon"></i>
+                        <span>Become Seller</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item" onclick="showUserSection('withdraw')">
+                        <i class="fas fa-arrow-up nav-icon"></i>
+                        <span>Withdraw Funds</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item" onclick="showUserSection('history')">
+                        <i class="fas fa-history nav-icon"></i>
+                        <span>Transaction History</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item" onclick="showUserSection('profile')">
+                        <i class="fas fa-user nav-icon"></i>
+                        <span>Profile</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item" onclick="logout()">
+                        <i class="fas fa-sign-out-alt nav-icon"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Header -->
+                    <div class="dashboard-header">
+                        <h1>User Dashboard</h1>
+                        <div class="header-right">
+                            <div class="search-container">
+                                <input type="text" placeholder="Search...">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="account-balance">
+                                <div>Account Balance</div>
+                                <div id="userWalletBalance">$1,250.50</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wallet Card -->
+                    <div class="wallet-card">
+                        <div class="balance-label">Available Balance</div>
+                        <div class="wallet-balance" id="userMainBalance">$1,250.50</div>
+                        <div class="account-status">Account Status: <span class="active-status">Active</span></div>
+                        
+                        <div class="wallet-actions">
+                            <button class="btn-primary" onclick="showUserSection('buy')">
+                                <i class="fas fa-shopping-cart"></i> Buy Crypto
+                            </button>
+                            <button class="btn-secondary" onclick="showUserSection('sell')">
+                                <i class="fas fa-user-tie"></i> Become Seller
+                            </button>
+                            <button class="btn-secondary" onclick="showUserSection('withdraw')">
+                                <i class="fas fa-arrow-up"></i> Withdraw Funds
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="quick-actions">
+                        <div class="action-card" onclick="showUserSection('buy')">
+                            <div class="action-icon">
+                                <i class="fas fa-arrow-down"></i>
+                            </div>
+                            <h3>Buy Crypto</h3>
+                            <p>Purchase USDT, BTC, ETH with local payment methods</p>
+                        </div>
+                        
+                        <div class="action-card" onclick="showUserSection('sell')">
+                            <div class="action-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h3>Become Seller</h3>
+                            <p>Apply to become verified seller and earn money</p>
+                        </div>
+                        
+                        <div class="action-card" onclick="showUserSection('withdraw')">
+                            <div class="action-icon">
+                                <i class="fas fa-arrow-up"></i>
+                            </div>
+                            <h3>Withdraw Funds</h3>
+                            <p>Withdraw your balance to bank or mobile banking</p>
+                        </div>
+                        
+                        <div class="action-card" onclick="showUserSection('history')">
+                            <div class="action-icon">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <h3>Transaction History</h3>
+                            <p>View all your deposits, withdrawals, and bonuses</p>
+                        </div>
+                    </div>
+
+                    <!-- User Content Sections -->
+                    <div id="user-content">
+                        <!-- Overview Section (Default) -->
+                        <div id="user-overview">
+                            <!-- Recent Transactions -->
+                            <div class="table-container">
+                                <div class="table-header">
+                                    <div class="table-title">Recent Transactions</div>
+                                    <a href="#" onclick="showUserSection('history')" class="view-all">View All</a>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Description</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="userTransactionsTable">
+                                        <!-- Filled by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Pending Requests -->
+                            <div class="table-container">
+                                <div class="table-header">
+                                    <div class="table-title">Pending Requests</div>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Request Type</th>
+                                            <th>Amount</th>
+                                            <th>Submitted</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="userPendingRequestsTable">
+                                        <!-- Filled by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Buy Crypto Section -->
+                        <div id="user-buy" class="hidden">
+                            <div class="table-container">
+                                <div class="table-header">
+                                    <div class="table-title">Buy Crypto</div>
+                                </div>
+                                <div class="form-container">
+                                    <form id="userBuyForm">
+                                        <div class="form-group">
+                                            <label>Select Crypto</label>
+                                            <select name="cryptoType" required>
+                                                <option value="">Choose crypto</option>
+                                                <option value="USDT">USDT (Tether)</option>
+                                                <option value="BTC">Bitcoin (BTC)</option>
+                                                <option value="ETH">Ethereum (ETH)</option>
+                                                <option value="BNB">BNB</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>Amount (USD)</label>
+                                            <input type="number" name="amount" placeholder="Enter amount" min="10" step="0.01" required>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>Payment Method</label>
+                                            <select name="paymentMethod" required>
+                                                <option value="">Select method</option>
+                                                <option value="bkash">bKash</option>
+                                                <option value="rocket">Rocket</option>
+                                                <option value="nagad">Nagad</option>
+                                                <option value="upay">Upay</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>Your Sender Number</label>
+                                            <input type="tel" name="senderNumber" placeholder="01XXXXXXXXX" required>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>Transaction ID</label>
+                                            <input type="text" name="transactionId" placeholder="Enter transaction ID from payment" required>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>Payment Screenshot</label>
+                                            <input type="file" name="screenshot" accept="image/*" required>
+                                        </div>
+                                        
+                                        <div class="payment-info">
+                                            <h4><i class="fas fa-info-circle"></i> Send Payment To:</h4>
+                                            <div>
+                                                <strong>01306755110</strong> (Rocket)
+                                            </div>
+                                            <div>
+                                                <strong>01917142350</strong> (bKash, Nagad)
+                                            </div>
+                                            <div>
+                                                <strong>01865467486</strong> (Rocket, Nagad, Upay)
+                                            </div>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn-primary full-width">
+                                            <i class="fas fa-paper-plane"></i> Submit Buy Request
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Other user sections -->
+                        <div id="user-sell" class="hidden">
+                            <div class="table-container">
+                                <div class="table-header">
+                                    <div class="table-title">Seller Application</div>
+                                </div>
+                                <div class="form-container">
+                                    <form id="userSellerForm">
+                                        <div class="form-group">
+                                            <label>Your WhatsApp Number</label>
+                                            <input type="tel" name="whatsappNumber" placeholder="01865467486" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Security Deposit Amount (BDT)</label>
+                                            <input type="number" name="depositAmount" placeholder="150000" required>
+                                        </div>
+                                        <button type="submit" class="btn-primary full-width">
+                                            <i class="fas fa-user-check"></i> Submit Seller Application
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="user-withdraw" class="hidden">
+                            <div class="table-container">
+                                <div class="table-header">
+                                    <div class="table-title">Withdraw Funds</div>
+                                </div>
+                                <div class="form-container">
+                                    <form id="userWithdrawForm">
+                                        <div class="form-group">
+                                            <label>Withdrawal Amount (USD)</label>
+                                            <input type="number" name="amount" placeholder="Enter amount" min="10" step="0.01" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Payment Method</label>
+                                            <select name="paymentMethod" required>
+                                                <option value="">Select method</option>
+                                                <option value="bkash">bKash</option>
+                                                <option value="rocket">Rocket</option>
+                                                <option value="nagad">Nagad</option>
+                                                <option value="bank">Bank Transfer</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Account Number</label>
+                                            <input type="text" name="accountNumber" placeholder="Enter account number" required>
+                                        </div>
+                                        <button type="submit" class="btn-primary full-width">
+                                            <i class="fas fa-paper-plane"></i> Request Withdrawal
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="user-history" class="hidden">
+                            <div class="table-container">
+                                <div class="table-header">
+                                    <div class="table-title">Transaction History</div>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Type</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                            <th>Details</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="userFullHistoryTable">
+                                        <!-- Filled by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div id="user-profile" class="hidden">
+                            <div class="table-container">
+                                <div class="table-header">
+                                    <div class="table-title">Profile Information</div>
+                                </div>
+                                <div class="profile-container">
+                                    <div class="profile-header">
+                                        <div class="avatar">J</div>
+                                        <div>
+                                            <h3>John Doe</h3>
+                                            <p>Member since: Jan 2024</p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-grid">
+                                        <div class="profile-item">
+                                            <div>Email</div>
+                                            <div>john.doe@example.com</div>
+                                        </div>
+                                        <div class="profile-item">
+                                            <div>Phone</div>
+                                            <div>+880 1712345678</div>
+                                        </div>
+                                        <div class="profile-item">
+                                            <div>Verification Status</div>
+                                            <div><span class="status active">Verified</span></div>
+                                        </div>
+                                        <div class="profile-item">
+                                            <div>Account Type</div>
+                                            <div>Standard User</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard (Hidden by Default) -->
+        <div id="admin-dashboard" class="hidden">
+            <div class="dashboard-container">
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <div class="logo">ADMIN</div>
+                    
+                    <a href="#" class="nav-item active" onclick="showAdminSection('overview')">
+                        <i class="fas fa-tachometer-alt nav-icon"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item" onclick="showAdminSection('users')">
+                        <i class="fas fa-users nav-icon"></i>
+                        <span>Users</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item" onclick="showAdminSection('requests')">
+                        <i class="fas fa-file-invoice-dollar nav-icon"></i>
+                        <span>Pending Requests</span>
+                        <span class="notification-count" id="adminPendingCount">5</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item" onclick="showAdminSection('wallet')">
+                        <i class="fas fa-wallet nav-icon"></i>
+                        <span>Wallet Management</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item" onclick="showAdminSection('transactions')">
+                        <i class="fas fa-history nav-icon"></i>
+                        <span>Transaction History</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item" onclick="showAdminSection('settings')">
+                        <i class="fas fa-cog nav-icon"></i>
+                        <span>Settings</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item" onclick="logout()">
+                        <i class="fas fa-sign-out-alt nav-icon"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Header -->
+                    <div class="dashboard-header">
+                        <h1>Admin Dashboard</h1>
+                        <div class="header-right">
+                            <div class="search-container">
+                                <input type="text" placeholder="Search...">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="account-balance">
+                                <div>Total Balance Managed</div>
+                                <div>$125,678.90</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="stats-grid">
+                        <div class="stat-card pending">
+                            <div class="stat-value" id="adminPendingStats">5</div>
+                            <div class="stat-label">Pending Requests</div>
+                        </div>
+                        
+                        <div class="stat-card approved">
+                            <div class="stat-value" id="adminApprovedStats">128</div>
+                            <div class="stat-label">Approved Today</div>
+                        </div>
+                        
+                        <div class="stat-card rejected">
+                            <div class="stat-value" id="adminRejectedStats">3</div>
+                            <div class="stat-label">Rejected Today</div>
+                        </div>
+                        
+                        <div class="stat-card total">
+                            <div class="stat-value" id="adminTotalStats">12,458</div>
+                            <div class="stat-label">Total Users</div>
+                        </div>
+                    </div>
+
+                    <!-- Admin Content Sections -->
+                    <div id="admin-content">
+                        <!-- Overview Section (Default) -->
+                        <div id="admin-overview">
+                            <!-- Pending Requests Table -->
+                            <div class="table-container">
+                                <div class="table-header">
+                                    <div class="table-title">Pending User Requests</div>
+                                    <button class="action-btn btn-approve" onclick="showAdminAddFundsModal()">
+                                        <i class="fas fa-plus"></i> Add Funds to User
+                                    </button>
+                                </div>
+
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>User</th>
+                                            <th>Request Type</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                            <th>Credited Amount</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="adminRequestsTable">
+                                        <!-- Filled by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Recent Transactions -->
+                            <div class="table-container">
+                                <div class="table-header">
+                                    <div class="table-title">Recent Wallet Transactions</div>
+                                    <a href="#" onclick="showAdminSection('transactions')" class="view-all">View All</a>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>User</th>
+                                            <th>Transaction ID</th>
+                                            <th>Amount</th>
+                                            <th>Type</th>
+                                            <th>Status</th>
+                                            <th>Date</th>
+                                            <th>Approved By</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="adminTransactionsTable">
+                                        <!-- Filled by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Users Section -->
+                        <div id="admin-users" class="hidden">
+                            <div class="table-container">
+                                <div class="table-header">
+                                    <div class="table-title">All Users</div>
+                                    <button class="action-btn btn-primary" onclick="adminAddNewUser()">
+                                        <i class="fas fa-user-plus"></i> Add New User
+                                    </button>
+                                </div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Phone</th>
+                                            <th>Balance</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="adminUsersTable">
+                                        <!-- Filled by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Settings Section -->
+                        <div id="admin-settings" class="hidden">
+                            <div class="table-container">
+                                <div class="table-header">
+                                    <div class="table-title">System Settings</div>
+                                </div>
+                                <div class="form-container">
+                                    <form id="adminSettingsForm">
+                                        <div class="form-group">
+                                            <label>USD to BDT Rate</label>
+                                            <input type="number" value="120" step="0.01" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Commission Rate (%)</label>
+                                            <input type="number" value="2.5" step="0.1" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Minimum Deposit (USD)</label>
+                                            <input type="number" value="10" step="0.01" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Minimum Withdrawal (USD)</label>
+                                            <input type="number" value="20" step="0.01" required>
+                                        </div>
+                                        <button type="submit" class="btn-primary full-width">
+                                            <i class="fas fa-save"></i> Save Settings
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== MODALS ===== -->
+
+    <!-- Login/Register Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content fade-in">
+            <button class="close-modal" onclick="hideModal('loginModal')">&times;</button>
+            <h2>Welcome to axcrypto</h2>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="switchAuthTab('login')">Login</button>
+                <button class="auth-tab" onclick="switchAuthTab('register')">Register</button>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form active">
+                <div class="form-group">
+                    <label>Email or Phone Number</label>
+                    <input type="text" placeholder="Enter email or phone" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+            </form>
+            
+            <!-- Register Form -->
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter full name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="Enter email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="01XXXXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Create password" required>
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" placeholder="Confirm password" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+            </form>
+            
+            <div class="auth-footer">
+                <p style="text-align: center; color: var(--text-secondary); margin-top: 20px;">
+                    Forgot password? <a href="#" style="color: var(--primary);" onclick="showNotification('Contact support@axcrypto.com for password reset')">Reset here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buy Modal -->
+    <div id="buyModal" class="modal">
+        <div class="modal-content fade-in">
+            <button class="close-modal" onclick="hideModal('buyModal')">&times;</button>
+            <h2>Buy Crypto</h2>
+            
+            <div class="payment-instructions">
+                <h4><i class="fas fa-info-circle"></i> Send Payment To:</h4>
+                <div>
+                    <strong>01306755110</strong> (Rocket)
+                </div>
+                <div>
+                    <strong>01917142350</strong> (bKash, Nagad)
+                </div>
+                <div>
+                    <strong>01865467486</strong> (Rocket, Nagad, Upay)
+                </div>
+                <p>Send money with cost. Take screenshot after payment.</p>
+            </div>
+
+            <form id="publicBuyForm">
+                <div class="form-group">
+                    <label>Crypto Type</label>
+                    <select name="cryptoType" required>
+                        <option value="">Select crypto</option>
+                        <option value="USDT">USDT (Tether)</option>
+                        <option value="BTC">Bitcoin (BTC)</option>
+                        <option value="ETH">Ethereum (ETH)</option>
+                        <option value="BNB">BNB</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Amount (USD)</label>
+                    <input type="number" name="amount" placeholder="100" min="10" required>
+                </div>
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <select name="paymentMethod" required>
+                        <option value="">Select method</option>
+                        <option value="bkash">bKash</option>
+                        <option value="rocket">Rocket</option>
+                        <option value="nagad">Nagad</option>
+                        <option value="upay">Upay</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Your Sender Number</label>
+                    <input type="tel" name="senderNumber" placeholder="01XXXXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>Transaction ID</label>
+                    <input type="text" name="transactionId" placeholder="TRX123456" required>
+                </div>
+                <div class="form-group">
+                    <label>Payment Screenshot</label>
+                    <input type="file" name="screenshot" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">
+                    <i class="fas fa-check-circle"></i> Submit Buy Request
+                </button>
+            </form>
+            <p class="modal-note">Admin will review within 30 minutes. Wallet will be updated after approval.</p>
+        </div>
+    </div>
+
+    <!-- Seller Modal -->
+    <div id="sellerModal" class="modal">
+        <div class="modal-content fade-in">
+            <button class="close-modal" onclick="hideModal('sellerModal')">&times;</button>
+            <h2>Seller Application</h2>
+            
+            <div class="requirements-note">
+                <h4><i class="fas fa-exclamation-triangle"></i> Requirements:</h4>
+                <ul>
+                    <li>Security Deposit: 1.5 Lakh BDT</li>
+                    <li>All documents must be clear and valid</li>
+                    <li>WhatsApp verification required: 01865467486</li>
+                </ul>
+            </div>
+
+            <form id="publicSellerForm">
+                <div class="form-group">
+                    <label>WhatsApp Number</label>
+                    <input type="tel" name="whatsappNumber" value="01865467486" required>
+                </div>
+                <div class="form-group">
+                    <label>Bank Blank Cheque (PDF/Image)</label>
+                    <input type="file" name="cheque" accept=".pdf,.jpg,.jpeg,.png" required>
+                </div>
+                <div class="form-group">
+                    <label>Passport Copy</label>
+                    <input type="file" name="passport" accept=".pdf,.jpg,.jpeg,.png" required>
+                </div>
+                <div class="form-group">
+                    <label>NID Copy (Front & Back)</label>
+                    <input type="file" name="nid" accept=".pdf,.jpg,.jpeg,.png" required>
+                </div>
+                <div class="form-group">
+                    <label>Bank Statement (Last Month)</label>
+                    <input type="file" name="bankStatement" accept=".pdf,.jpg,.jpeg,.png" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        I agree to deposit 1.5 Lakh BDT security money
+                    </label>
+                </div>
+                <button type="submit" class="btn-primary full-width seller-submit">
+                    <i class="fas fa-paper-plane"></i> Submit Application
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Add Funds Modal -->
+    <div id="adminAddFundsModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="hideModal('adminAddFundsModal')">&times;</button>
+            <h2>Add Funds to User Wallet</h2>
+            
+            <form id="adminAddFundsForm">
+                <div class="form-group">
+                    <label>Select User</label>
+                    <select id="adminUserSelect" required>
+                        <option value="">Select a user</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Amount to Add (USD)</label>
+                    <input type="number" id="adminFundsAmount" placeholder="Enter amount" min="1" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Transaction Type</label>
+                    <select id="adminTransactionType" required>
+                        <option value="bonus">Welcome Bonus</option>
+                        <option value="refund">Refund</option>
+                        <option value="reward">Reward</option>
+                        <option value="manual">Manual Adjustment</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Notes (Optional)</label>
+                    <textarea id="adminTransactionNotes" placeholder="Add notes about this transaction" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-check-circle"></i> Add Funds to Wallet
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- View Request Modal -->
+    <div id="viewRequestModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="hideModal('viewRequestModal')">&times;</button>
+            <h2>Request Details</h2>
+            
+            <div id="requestDetails">
+                <!-- Filled by JavaScript -->
+            </div>
+
+            <div class="form-group">
+                <label>Amount to Credit (USD)</label>
+                <input type="number" id="creditAmount" placeholder="Enter amount to credit" min="1" step="0.01" value="10">
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-primary approve-btn" onclick="adminApproveRequest()">
+                    <i class="fas fa-check"></i> Approve & Credit
+                </button>
+                <button class="btn-primary reject-btn" onclick="adminRejectRequest()">
+                    <i class="fas fa-times"></i> Reject Request
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- View User Modal -->
+    <div id="viewUserModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="hideModal('viewUserModal')">&times;</button>
+            <h2>User Details</h2>
+            
+            <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <div class="avatar" style="width: 60px; height: 60px; font-size: 24px;" id="viewUserAvatar"></div>
+                    <div>
+                        <h3 id="viewUserName">John Doe</h3>
+                        <p id="viewUserEmail">john@example.com</p>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div>
+                        <div style="font-size: 12px; color: var(--text-secondary);">Phone</div>
+                        <div style="font-weight: 600;" id="viewUserMobile">01712345678</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 12px; color: var(--text-secondary);">Wallet Balance</div>
+                        <div style="font-weight: 600; color: var(--success);" id="viewUserWallet">$1,250.50</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 12px; color: var(--text-secondary);">Account Status</div>
+                        <div id="viewUserStatus"><span class="status active">Active</span></div>
+                    </div>
+                    <div>
+                        <div style="font-size: 12px; color: var(--text-secondary);">Member Since</div>
+                        <div style="font-weight: 600;">Jan 2024</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notificationText">Operation completed successfully!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
